@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+}
+
+:root {
+  --primary-color: #272a31;
+  --secondary-color: #ec5242;
+  --main-bg-color: #d3d3d3;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: "lato", sans-serif;
+  overflow-x: unset;
+}
+
+/* defualt style for all `a` tags */
+a {
+  text-decoration: none;
+}
+
+/* header content  */
+
+/* top nav section */
+.top-nav {
+  display: none;
+  background-color: var(--primary-color);
+}
+
+.top-nav-links {
+  list-style: none;
+  color: white;
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+  margin-right: 15%;
+}
+
+.top-nav-links > li > a {
+  color: #fff;
+  display: inline-block;
+  margin: 10px 0 10px;
+  cursor: pointer;
+}
+
+/* main nav section */
+nav {
+  background-color: #fff;
+}
+
+.logo-menu-icon-container {
+  background-color: #fff;
+  width: 100%;
+  height: 70px;
+}
+
+/* mobile menu icon */
+.menu-icon {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  width: 30px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  position: absolute;
+  display: none;
+  width: 220px;
+  margin-right: -220px;
+  top: 70px;
+  right: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+  transition: 1s;
+}
+
+.menu-list {
+  display: block;
+  list-style: none;
+  margin: 20px auto;
+  margin-left: -40px;
+}
+
+.menu-list > li {
+  padding: 10px;
+}
+
+.menu-list > li > a {
+  color: #fff;
+}
+
+.menu-show {
+  margin-right: 0;
+  display: block;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 6%;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logo > img {
+  width: 70px;
+  margin-top: 0;
+  border-radius: 50%;
+}
+
+.global-text {
+  position: relative;
+  color: var(--secondary-color);
+  top: -30px;
+}
+
+.events-text {
+  position: relative;
+  left: -80px;
+  top: -7px;
+  color: var(--primary-color);
+}
+
+.main-nav-links {
+  display: none;
+  list-style: none;
+  justify-content: end;
+  gap: 5%;
+  margin-right: 15%;
+  padding: 20px;
+}
+
+.main-nav-links > li {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.main-nav-links > li > a {
+  color: var(--primary-color);
+}
+
+.menu-list > li:hover {
+  background-color: #46484e;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.menu-list > li > a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-active {
+  color: var(--secondary-color);
+}
+
+.header-bg-img {
+  width: 100%;
+  height: 300px;
+  background: blue;
+  background-image: url("../images/new_statesman_events.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* header section ends here */
+
+/* page description section  */
+.page-description-content {
+  width: 95%;
+  margin: 10px auto;
+}
+
+.welcome-message {
+  color: var(--secondary-color);
+  font-size: 30px;
+}
+
+.slogan {
+  position: relative;
+  font-weight: 700;
+  max-width: 800px;
+  margin-top: 10px;
+  color: var(--secondary-color);
+  font-size: 35px;
+  background-image:
+    linear-gradient(
+      -225deg,
+      #ec5242 0%,
+      #44107a 29%,
+      #ec5242 67%,
+      #ec5242 100%
+    );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-description {
+  max-width: 850px;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 20px;
+  border-style: outset;
+  color: var(--primary-color);
+  line-height: 35px;
+  word-spacing: 5px;
+  background-color: #c9c4c4;
+  padding: 10px;
+}
+
+/* one trending event */
+.trending-event-container {
+  margin-left: 2.5%;
+}
+
+.trending-event-container > h2 {
+  color: var(--secondary-color);
+}
+
+.trending-event-container > .topic {
+  color: var(--primary-color);
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.trending-event-container > .date {
+  color: #3a3d42;
+  font-size: 20px;
+  word-spacing: 7px;
+}
+
+@media screen and (min-width: 768px) {
+  .top-nav {
+    display: block;
+  }
+
+  .main-nav-links {
+    display: flex;
+  }
+
+  .logo-menu-icon-container {
+    width: 0;
+    height: 0;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .logo {
+    top: auto;
+  }
+
+  .page-description-content {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .slogan {
+    font-size: 40px;
+    font-weight: 900;
+  }
+
+  .trending-event-container {
+    margin-left: 10%;
+  }
+}
