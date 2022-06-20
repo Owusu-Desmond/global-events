@@ -1,14 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./images/logo.jpg" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Global Events</title>
-</head>
-<body>
-    <h1>Hello Global!</h1>
-<script src="./js/script.js"></script>
-</body>
+  </head>
+  <body>
+    <!-- page header section -->
+    <header>
+      <!-- top nav -->
+      <div class="top-nav">
+        <ul class="top-nav-links">
+          <li>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+          </li>
+          <li><a href="#">English</a></li>
+          <li><a href="#">My page</a></li>
+          <li><a href="#">Sign in</a></li>
+        </ul>
+      </div>
+      <!-- top nav ends here -->
+
+      <!-- mobile menu pop up -->
+      <div class="mobile-menu">
+        <ul class="menu-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">live</a></li>
+          <li><a href="#">Upcoming</a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">My page</a></li>
+          <li><a href="#">Sign in</a></li>
+        </ul>
+      </div>
+      <!-- mobile menu pop up ends here-->
+
+      <nav>
+        <div class="logo-menu-icon-container">
+          <a class="logo" href="#"
+            ><img src="./images/logo.jpg" alt="logo" /><span
+              class="global-text"
+              >Global</span
+            ><span class="events-text">Events</span></a
+          >
+          <div class="menu-icon"><i class="bi bi-list"></i></div>
+        </div>
+
+        <ul class="main-nav-links">
+          <li>
+            <a href="#"><span class="nav-active">Home</span></a>
+          </li>
+          <li><a href="#">live</a></li>
+          <li><a href="#">Upcoming</a></li>
+          <li><a href="#">Schedule</a></li>
+        </ul>
+      </nav>
+      <div class="header-bg-img"></div>
+    </header>
+
+    <!-- page main section -->
+    <main>
+      <section>
+        <div class="page-description-content">
+          <p class="welcome-message">Welcome hearing!</p>
+          <h1 class="slogan">CREATE AND SEE LIVE WORLDWIDE POPULAR EVENTS</h1>
+          <p class="page-description">
+            Hello, you are at the right website to schedule an event, record and
+            stream live video to people around the world. Create great events
+            and publish around the world before the start date. Hear all live
+            events being published at GlobalEvents from home.
+          </p>
+        </div>
+        <div class="trending-event-container">
+          <h2>Trending Today</h2>
+          <p class="topic">Transition into tech BY Owusu Ansah</p>
+          <p class="date">June-2022-26(SAT) || @(3:00pm UTC+1) via Zoom</p>
+        </div>
+      </section>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
 </html>
