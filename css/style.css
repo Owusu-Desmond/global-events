@@ -234,7 +234,115 @@ nav {
   font-size: 20px;
   word-spacing: 7px;
 }
-
+/* events categories container */
+.events-categories-container{
+    background-color:var(--primary-color);
+    margin-top: 50px;
+    padding: 20px;
+}
+.events-categories-container > h3{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    width: fit-content;
+    border-width: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--secondary-color);
+    margin: 30px auto;
+    text-align: center;
+}
+.event-categories{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, auto));
+    gap: 20px;   
+}
+.category{
+    background-color: #383941;
+    cursor: pointer;
+}
+.category-icon{
+    color: white;
+    font-size: 70px;
+    font-weight: 900;
+    text-align: center;
+}
+.category-name{
+    color: var(--secondary-color);
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+.category-description{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 300px;
+    margin: 15px auto;
+}
+.active-category{
+    border: 3px solid white;
+}
+.see-events{
+    text-align: center;
+    margin: 40px auto;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform:uppercase;
+    word-spacing: 7px;
+}
+.see-events> a{
+    color: white;
+    text-decoration: underline;
+}
+/* events-category-section */
+/* .events-category-section{
+    background-color: white;
+} */
+.category-events-container{
+    display: grid;
+    width: 90%;
+    margin: 50px auto;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+.an-event-container{
+   display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+}
+.event-date{
+    color: #383941;
+    font-size: 20px;
+}
+.event-topic{
+    color: var(--secondary-color);
+    font-size: 18px;
+    margin: 5px auto;
+}
+.event-location{
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.event-info{
+    font-size: 20px;
+    margin: 5px auto;
+}
+.event-tags{
+    font-size: 13px;
+    color: var(--primary-color);
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+.host-image{
+    width: 100%;
+    height: 200px;
+}
+.host-name{
+    font-style: italic;
+}
 @media screen and (min-width: 768px) {
   .top-nav {
     display: block;
@@ -274,4 +382,12 @@ nav {
   .trending-event-container {
     margin-left: 10%;
   }
+
+  .event-categories{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+.category-events-container{
+    grid-template-columns: 1fr 1fr;
+}
 }
