@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -12,7 +12,7 @@
 
 body {
   background-color: var(--main-bg-color);
-  font-family: "lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   overflow-x: unset;
 }
 
@@ -294,7 +294,7 @@ nav {
 }
 
 .active-category {
-  border: 3px solid white;
+  border: 3px solid #fff;
 }
 
 .see-events {
@@ -302,7 +302,6 @@ nav {
   margin: 40px auto;
   font-size: 25px;
   font-weight: 600;
-  text-transform: uppercase;
   word-spacing: 7px;
 }
 
@@ -311,9 +310,13 @@ nav {
 /* .events-category-section{
     background-color: white;
 } */
+.events-parent-container {
+  display: none;
+}
+
 .category-events-container {
   display: grid;
-  width: 90%;
+  width: 92%;
   margin: 50px auto;
   grid-template-columns: 1fr;
   grid-gap: 20px;
@@ -322,18 +325,30 @@ nav {
 .an-event-container {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1.2fr 1.8fr;
+}
+
+h4 {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 30px;
+  color: var(--secondary-color);
 }
 
 .event-date {
   color: #383941;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .event-topic {
   color: var(--secondary-color);
-  font-size: 18px;
+  font-size: 15px;
   margin: 5px auto;
+  cursor: pointer;
+}
+
+.event-topic:hover {
+  text-decoration: underline;
 }
 
 .event-location {
@@ -344,12 +359,13 @@ nav {
 }
 
 .event-info {
-  font-size: 20px;
-  margin: 5px auto;
+  font-size: 16px;
+  margin-top: 7px;
+  margin-bottom: 5px;
 }
 
 .event-tags {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--primary-color);
   font-weight: 900;
   margin-bottom: 5px;
@@ -357,11 +373,23 @@ nav {
 
 .host-image {
   width: 100%;
-  height: 200px;
+  height: 210px;
 }
 
-.host-name {
-  font-style: italic;
+.host-interested-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.host-interested-container > div > button {
+  color: var(--secondary-color);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.active {
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -410,5 +438,9 @@ nav {
 
   .category-events-container {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .host-interested-container {
+    grid-template-columns: auto auto;
   }
 }
