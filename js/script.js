@@ -187,14 +187,69 @@ const eventsArr = [
     events: [
 
       {
-        date: 'Fri, 24 - Sat, 25 Jun 2022',
-        topic: 'Gearfest',
-        location: 'Fort Wayne , ind',
+        date: '1 hour ago',
+        topic: "President Putin's inclusion in a summit of top emerging economies is a signal that Russia is not alone on the world stage",
+        location: 'Russia',
         info: '',
         tags: '',
-        hostName: '',
-        hostImageUrl: '',
-        starCount: 7.1,
+        hostName: 'Marshall Cohen',
+        hostImageUrl: './images/news/president-inclusion.jpg',
+        starCount: 1327,
+      },
+      {
+        date: '1 day ago',
+        topic: "China sends dozens of warplanes into skies near Taiwan",
+        location: 'China',
+        info: "Expert: China's military aggression on Taiwan will be 'incredible calamity' ",
+        tags: '',
+        hostName: 'Brad Lendon',
+        hostImageUrl: './images/news/dozens-of-warplanes.jpg',
+        starCount: 1034,
+      },
+      {
+        date: '40 munites ago',
+        topic: `
+                Russian troops have advanced into villages south of 
+                Lysychansk -- the last Ukrainian holdout in the 
+                key region of Luhansk -- and Moscow's sheer 
+                firepower is grinding down defenses
+                `,
+        location: 'Russia',
+        info: '',
+        tags: '',
+        hostName: 'Helen Regan',
+        hostImageUrl: './images/news/russian-troops.jpg',
+        starCount: 1761,
+      },
+      {
+        date: '19 hours ago',
+        topic: "Japan tracks eight Russian and Chinese warships near its territory",
+        location: 'Japan',
+        info: 'At least eight Russian and Chinese warships have been spotted in the seas near Japan this week',
+        tags: '',
+        hostName: 'Brad Lendon',
+        hostImageUrl: './images/news/japan-tracks.jpg',
+        starCount: 461,
+      },
+      {
+        date: '2 days ago',
+        topic: "Republican officials take the lead testifying against Trump",
+        location: 'USA',
+        info: 'Frustrated with hearings, Trump turns ire toward his allies',
+        tags: '',
+        hostName: 'Ruben Anan',
+        hostImageUrl: './images/news/republican-officials.jpg',
+        starCount: 617,
+      },
+      {
+        date: '2 weeks ago',
+        topic: "Families of Americans detained abroad call for urgent action from Biden to free their loved ones",
+        location: 'America',
+        info: "<b>Analysis:</b> Pence ignores Trump's remarkable record of falsehoods",
+        tags: '',
+        hostName: 'Jennifer Hansler,',
+        hostImageUrl: './images/news/families-of-americians.jpg',
+        starCount: 542,
       },
 
     ],
@@ -226,8 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <i class='${events.privateClasses.categoryIcon} ${categoryClass}'></i>
                         </p>
                         <p class="category-name ${categoryClass}">${events.category}</p>
-                        <p class="category-description ${categoryClass}">
-                            ${events.description}
+                        <p class="category-description">
+                            <a class="${categoryClass}" href="#events-category-section">${events.description}</a>
                         </p>
                     `;
 
@@ -256,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <h5 class="event-topic">${event.topic}</h5>
                         <div class="event-location">
-                            ${event.location} ~ Get <i class="bi bi-star"></i> interested & see live
+                            ${event.location} ~ Get <i style="color:#ec5242;" class="bi bi-star-fill"></i> interested & see live
                         </div>
                         <p class="event-info">${event.info}</p>
                         <p class="event-tags">
@@ -265,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="host-interested-container">
                             <div>Host : <u><i>${event.hostName}</i></u></div>
                             <div>
-                                <button class="interested-btn"><i class="bi bi-star"></i><span>${event.starCount}k</span></button>
+                                <button id='star${event.starCount}' class="interested-btn"><i class="bi bi-star"></i><span>${event.starCount}k</span></button>
                             </div>
                         </div>
                     </div>
