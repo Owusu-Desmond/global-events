@@ -70,9 +70,9 @@
     <section>
       <div id="sign-in-form-modal" class="modal">
         <form
+          id="sign-in-form"
           class="modal-content animate"
-          action="/action_page.php"
-          method="post"
+          action="/about.html"
         >
           <div class="imgcontainer">
             <span
@@ -84,19 +84,25 @@
           </div>
           <h2>Login</h2>
           <div class="container">
-            <label for="uname"><b>Username</b></label>
+            <label for="email"><b>Email Address</b></label>
             <input
-              type="text"
-              placeholder="Enter Username"
-              name="uname"
+              type="email"
+              id="login-email"
+              maxlength="50"
+              minlength="10"
+              placeholder="Enter email here .."
+              name="email"
               required
             />
 
-            <label for="psw"><b>Password</b></label>
+            <label for="password"><b>Password</b></label>
             <input
               type="password"
-              placeholder="Enter Password"
-              name="psw"
+              id="login-password"
+              maxlength="10"
+              minlength="8"
+              placeholder="Enter password here .."
+              name="password"
               required
             />
             <label>
@@ -106,7 +112,7 @@
               </div>
             </label>
             <button class="sign-in-submit-btn form-submit-btn" type="submit">
-              Login
+              Submit
             </button>
             <div>
               Dont have an acount
@@ -130,9 +136,9 @@
     <section>
       <div id="sign-up-form-modal" class="modal">
         <form
+          id="sign-up-form"
           class="modal-content animate"
-          action="/action_page.php"
-          method="post"
+          action="/about.html"
         >
           <div class="imgcontainer">
             <span
@@ -144,19 +150,36 @@
           </div>
           <h2>Register</h2>
           <div class="container">
-            <label for="uname"><b>Username</b></label>
+            <label for="Username"><b>Username</b></label>
             <input
               type="text"
-              placeholder="Enter Username"
-              name="uname"
+              id="username"
+              placeholder="Enter username here .."
+              name="username"
+              maxlength="20"
+              minlength="7"
               required
             />
 
-            <label for="psw"><b>Password</b></label>
+            <label for="email"><b>Email Address</b></label>
+            <input
+              type="email"
+              id="register-email"
+              maxlength="50"
+              minlength="10"
+              placeholder="Enter email here .."
+              name="email"
+              required
+            />
+
+            <label for="password"><b>Password</b></label>
             <input
               type="password"
-              placeholder="Enter Password"
-              name="psw"
+              id="register-password"
+              maxlength="10"
+              minlength="8"
+              placeholder="Enter password here .."
+              name="password"
               required
             />
             <label>
@@ -165,8 +188,8 @@
                 Remember me
               </div>
             </label>
-            <button class="sign-in-submit-btn form-submit-btn" type="submit">
-              Register
+            <button class="sign-up-submit-btn form-submit-btn" type="submit">
+              Submit
             </button>
             <div>
               Have an acount
@@ -264,5 +287,6 @@
       </section>
     </footer>
     <script src="./js/script.js"></script>
+    <script src="./js/sigin.js"></script>
   </body>
 </html>
