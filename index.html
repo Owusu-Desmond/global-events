@@ -10,6 +10,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/signIn.css">
     <title>Global Events</title>
   </head>
   <body>
@@ -26,7 +27,7 @@
           </li>
           <li><a href="#">English</a></li>
           <li><a href="#">My page</a></li>
-          <li><a href="#">Sign in</a></li>
+          <li><a id="sign-in-btn1" style="border: 1px solid white; border-radius: 5px; padding:3px;" href="#">Sign in</a></li>
         </ul>
       </div>
       <!-- top nav ends here -->
@@ -34,12 +35,12 @@
       <!-- mobile menu pop up -->
       <div class="mobile-menu">
         <ul class="menu-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">live</a></li>
-          <li><a href="#">Upcoming</a></li>
-          <li><a href="#">Schedule</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#event-categories">Upcoming</a></li>
+          <li><a href="#">Live Streaming</a></li>
           <li><a href="#">My page</a></li>
-          <li><a href="#">Sign in</a></li>
+          <li><a id="sign-in-btn2" href="#">Sign in</a></li>
         </ul>
       </div>
       <!-- mobile menu pop up ends here-->
@@ -58,13 +59,80 @@
           <li>
             <a href="#"><span class="nav-active">Home</span></a>
           </li>
-          <li><a href="#">live</a></li>
-          <li><a href="#">Upcoming</a></li>
-          <li><a href="#">Schedule</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#event-categories">Upcoming</a></li>
+          <li><a href="#">Live Streaming</a></li>
         </ul>
       </nav>
       <div class="header-bg-img"></div>
     </header>
+    <!-- Sign in form modal section -->
+    <section>
+      <div id="sign-in-form-modal" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <span id="modal-close-btn1" class="modal-close-btn" title="Close Modal">&times;</span>
+          </div>
+          <h2>Login </h2>
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <label>
+              <div class="remember-me">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </div>
+            </label>
+            <button class="sign-in-submit-btn form-submit-btn" type="submit">Login</button>
+            <div>
+              Dont have an acount <span style="color: blue; cursor: pointer;" id="sign-up-btn"><u><i>Register</i></u> </span> 
+            </div>
+          </div>
+      
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" id="cancel-btn1" class="cancel-btn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sign up form modal section -->
+    <section>
+      <div id="sign-up-form-modal" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <span id="modal-close-btn2" class="modal-close-btn" title="Close Modal">&times;</span>
+          </div>
+          <h2>Register</h2>
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <label>
+              <div class="remember-me">
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </div>
+            </label>
+            <button class="sign-in-submit-btn form-submit-btn" type="submit">Register</button>
+            <div>
+              Have an acount <span style="color: blue; cursor: pointer;" id="sign-in-btn3"><u><i>Login</i></u> </span> 
+            </div>
+          </div>
+      
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" id="cancel-btn2" class="cancel-btn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
 
     <!-- page main section -->
     <main>
@@ -92,7 +160,7 @@
         <div class="events-categories-container">
           <h3>Upcoming Events</h3>
           <div class="horizontal-line"></div>
-          <div class="event-categories">
+          <div id="event-categories" class="event-categories">
             <!-- events categories here -->
           </div>
           <p class="see-events">
