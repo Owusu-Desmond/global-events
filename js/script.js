@@ -407,3 +407,62 @@ window.onclick = (event) => {
     signUpModal.style.display = 'none';
   }
 };
+
+/*
+  Resgister user and login user by storing user data in the local storage of the browser
+*/
+const registerForm = document.getElementById("sign-up-form");
+
+// add to storage function
+function addToStorage(key ,data){
+    localStorage.setItem(key, JSON.stringify(data))
+}
+// remove to storage function
+function getFromStorage(key){
+    // check if local storage has the value
+    const rawData = localStorage.getItem(key);
+    if (rawData !== null) {
+        return JSON.parse(localStorage.getItem(key))
+    } else {
+        return [];
+    }
+}
+// Register user
+registerForm.addEventListener('submit', (event) => { // changed from click to submit - find details on https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+    const user = {
+        username: username,
+        email: email,
+        password: password
+    }
+    // addToStorage("User" ,data)
+    let errors = [];
+    let users = getFromStorage('Users');
+    if (users.length === 0) {
+        users.push(user);
+        addToStorage('Users', users)
+        return;
+    }
+    // check if user already exist or not
+    users.forEach(user => {
+        if (user.username === username) {
+            errors.push("Username areadly exist");
+            event.preventDefault();
+            return;
+        } else if (user.email === email) {
+            errors.push("Email address areadly exist");
+            event.preventDefault();
+        }
+    });
+    // add user if there is no error
+    if (errors.length === 0) {
+        users.push(user);
+        addToStorage('Users', users);
+    }else{
+        event.preventDefault();
+        alert(errors[0]);
+    }
+});
+
