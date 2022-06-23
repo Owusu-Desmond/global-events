@@ -198,7 +198,7 @@ const eventsArr = [
       },
       {
         date: '1 day ago',
-        topic: "China sends dozens of warplanes into skies near Taiwan",
+        topic: 'China sends dozens of warplanes into skies near Taiwan',
         location: 'China',
         info: "Expert: China's military aggression on Taiwan will be 'incredible calamity' ",
         tags: '',
@@ -223,7 +223,7 @@ const eventsArr = [
       },
       {
         date: '19 hours ago',
-        topic: "Japan tracks eight Russian and Chinese warships near its territory",
+        topic: 'Japan tracks eight Russian and Chinese warships near its territory',
         location: 'Japan',
         info: 'At least eight Russian and Chinese warships have been spotted in the seas near Japan this week',
         tags: '',
@@ -233,7 +233,7 @@ const eventsArr = [
       },
       {
         date: '2 days ago',
-        topic: "Republican officials take the lead testifying against Trump",
+        topic: 'Republican officials take the lead testifying against Trump',
         location: 'USA',
         info: 'Frustrated with hearings, Trump turns ire toward his allies',
         tags: '',
@@ -243,7 +243,7 @@ const eventsArr = [
       },
       {
         date: '2 weeks ago',
-        topic: "Families of Americans detained abroad call for urgent action from Biden to free their loved ones",
+        topic: 'Families of Americans detained abroad call for urgent action from Biden to free their loved ones',
         location: 'America',
         info: "<b>Analysis:</b> Pence ignores Trump's remarkable record of falsehoods",
         tags: '',
@@ -367,42 +367,43 @@ document.querySelector('.event-categories').addEventListener('click', (e) => {
   });
 });
 // show and hide login and sign up modal
-const signInModal = document.getElementById('sign-in-form-modal')
-const signUpModal = document.getElementById('sign-up-form-modal')
+const signInModal = document.getElementById('sign-in-form-modal');
+const signUpModal = document.getElementById('sign-up-form-modal');
 // show sign in modal
 document.getElementById('sign-in-btn1').addEventListener('click', () => {
-  signInModal.style.display= 'block'
+  signInModal.style.display = 'block';
 });
 document.getElementById('sign-in-btn2').addEventListener('click', () => {
-  signInModal.style.display= 'block'
+  signInModal.style.display = 'block';
 });
 document.getElementById('sign-in-btn3').addEventListener('click', () => {
-  signUpModal.style.display= 'none'
-  signInModal.style.display= 'block'
+  signUpModal.style.display = 'none';
+  signInModal.style.display = 'block';
 });
 // show register modal
 document.getElementById('sign-up-btn').addEventListener('click', () => {
-  signInModal.style.display= 'none'
-  signUpModal.style.display= 'block'
+  signInModal.style.display = 'none';
+  signUpModal.style.display = 'block';
 });
 // close sign in modal
 document.getElementById('modal-close-btn1').addEventListener('click', () => {
-  signInModal.style.display= 'none'
+  signInModal.style.display = 'none';
 });
 document.getElementById('cancel-btn1').addEventListener('click', () => {
-  signInModal.style.display= 'none'
+  signInModal.style.display = 'none';
 });
 // close register modal
 document.getElementById('modal-close-btn2').addEventListener('click', () => {
-  signUpModal.style.display= 'none'
+  signUpModal.style.display = 'none';
 });
 document.getElementById('cancel-btn2').addEventListener('click', () => {
-  signUpModal.style.display= 'none'
+  signUpModal.style.display = 'none';
 });
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == signInModal) {
-        signInModal.style.display = "none";
-    }
-}
+window.onclick = (event) => {
+  if (event.target === signInModal || event.target === signUpModal) {
+    signInModal.style.display = 'none';
+    signUpModal.style.display = 'none';
+  }
+};
