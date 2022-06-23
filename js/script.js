@@ -366,7 +366,43 @@ document.querySelector('.event-categories').addEventListener('click', (e) => {
     }
   });
 });
-// star an event
-// document.querySelector('.interested-btn').addEventListener('click', () => {
-    
-// })
+// show and hide login and sign up modal
+const signInModal = document.getElementById('sign-in-form-modal')
+const signUpModal = document.getElementById('sign-up-form-modal')
+// show sign in modal
+document.getElementById('sign-in-btn1').addEventListener('click', () => {
+  signInModal.style.display= 'block'
+});
+document.getElementById('sign-in-btn2').addEventListener('click', () => {
+  signInModal.style.display= 'block'
+});
+document.getElementById('sign-in-btn3').addEventListener('click', () => {
+  signUpModal.style.display= 'none'
+  signInModal.style.display= 'block'
+});
+// show register modal
+document.getElementById('sign-up-btn').addEventListener('click', () => {
+  signInModal.style.display= 'none'
+  signUpModal.style.display= 'block'
+});
+// close sign in modal
+document.getElementById('modal-close-btn1').addEventListener('click', () => {
+  signInModal.style.display= 'none'
+});
+document.getElementById('cancel-btn1').addEventListener('click', () => {
+  signInModal.style.display= 'none'
+});
+// close register modal
+document.getElementById('modal-close-btn2').addEventListener('click', () => {
+  signUpModal.style.display= 'none'
+});
+document.getElementById('cancel-btn2').addEventListener('click', () => {
+  signUpModal.style.display= 'none'
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == signInModal) {
+        signInModal.style.display = "none";
+    }
+}
