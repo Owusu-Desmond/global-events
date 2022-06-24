@@ -27,21 +27,26 @@ Access the the online version of my application with this link
 
 ## Link to Presentation on this Project
 
-[See presentation](https://www.youtube.com/watch?v=ZdOP4faW7zY)
+https://www.youtube.com/watch?v=ZdOP4faW7zY
 
 ## Build With
 
 - Editor : Visual studio code
 
-- Languages 
+- Languages
+
   - [ ] HTML
   - [ ] CSS
   - [ ] JavaScript
 
-- Terminologies 
+- Terminologies
   - [ ] Github
   - [ ] Linters
   - [ ] LocalStorage
+  - [ ] WebHint
+  - [ ] Stylelint
+  - [ ] ESlint
+
 ## Author
 
 👤 **Desmond Owusu Ansah**
@@ -50,12 +55,11 @@ Access the the online version of my application with this link
 - Twitter [@DesmondOwusuDev](https://twitter.com/DesmondOwusuDev)
 - LinkedIn [@desmond-owusu-ansah](https://www.linkedin.com/in/desmond-owusu-ansah-09274a223/)
 
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Owusu-Desmond/global-events/issues).
 
 ## Show your support
 
@@ -70,3 +74,5 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+### Original design idea by **Cindy Shin in Behance**, in association with the Creative Commons [license](./CC.md) of the design.
