@@ -411,58 +411,82 @@ window.onclick = (event) => {
 /*
   Resgister user and login user by storing user data in the local storage of the browser
 */
-const registerForm = document.getElementById("sign-up-form");
+const registerForm = document.getElementById('sign-up-form');
+const loginForm = document.getElementById('sign-in-form');
 
 // add to storage function
-function addToStorage(key ,data){
-    localStorage.setItem(key, JSON.stringify(data))
+function addToStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
 }
 // remove to storage function
-function getFromStorage(key){
-    // check if local storage has the value
-    const rawData = localStorage.getItem(key);
-    if (rawData !== null) {
-        return JSON.parse(localStorage.getItem(key))
-    } else {
-        return [];
-    }
+function getFromStorage(key) {
+  // check if local storage has the value
+  const rawData = localStorage.getItem(key);
+  if (rawData !== null) {
+    return JSON.parse(localStorage.getItem(key));
+  }
+  return [];
 }
 // Register user
-registerForm.addEventListener('submit', (event) => { // changed from click to submit - find details on https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('register-email').value;
-    const password = document.getElementById('register-password').value;
-    const user = {
-        username: username,
-        email: email,
-        password: password
+registerForm.addEventListener('submit', (event) => {
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('register-email').value;
+  const password = document.getElementById('register-password').value;
+  const user = {
+    username,
+    email,
+    password,
+  };
+  // addToStorage("User" ,data)
+  const errors = [];
+  const users = getFromStorage('Users');
+  if (users.length === 0) {
+    users.push(user);
+    addToStorage('Users', users);
+    return;
+  }
+  // check if user already exist or not
+  users.forEach((user) => {
+    if (user.username === username) {
+      errors.push('Username areadly exist');
+      event.preventDefault();
+    } else if (user.email === email) {
+      errors.push('Email address areadly exist');
+      event.preventDefault();
     }
-    // addToStorage("User" ,data)
-    let errors = [];
-    let users = getFromStorage('Users');
-    if (users.length === 0) {
-        users.push(user);
-        addToStorage('Users', users)
-        return;
-    }
-    // check if user already exist or not
-    users.forEach(user => {
-        if (user.username === username) {
-            errors.push("Username areadly exist");
-            event.preventDefault();
-            return;
-        } else if (user.email === email) {
-            errors.push("Email address areadly exist");
-            event.preventDefault();
-        }
-    });
-    // add user if there is no error
-    if (errors.length === 0) {
-        users.push(user);
-        addToStorage('Users', users);
-    }else{
-        event.preventDefault();
-        alert(errors[0]);
-    }
+  });
+  // add user if there is no error
+  if (errors.length === 0) {
+    users.push(user);
+    addToStorage('Users', users);
+  } else {
+    event.preventDefault();
+    alert(errors[0]);
+  }
 });
-
+// Login user
+loginForm.addEventListener('submit', (event) => {
+  const errors = [];
+  const users = getFromStorage('Users');
+  if (users.length === 0) {
+    errors.push('Email address do not exit, please register');
+  }
+  // add user if there is no error
+  if (errors.length !== 0) {
+    event.preventDefault();
+    alert(errors[0]);
+  }
+});
+// get user from local storage when page loads
+const User = getFromStorage('Users');
+const signInText1 = document.getElementById('sign-in-btn1');
+const signInText2 = document.getElementById('sign-in-btn2');
+if (User.length > 0) {
+  document.getElementById('user-page').innerHTML = `<i class="bi bi-person-circle"></i>${User[0].username}`;
+  signInText1.innerHTML = 'Logout<i class="bi bi-arrow-left-square"></i>';
+  signInText2.innerHTML = 'Logout<i class="bi bi-arrow-left-square"></i>';
+  signInText1.id = '';
+  signInText2.id = '';
+  signInText1.href = 'index.html';
+  signInText2.href = 'index.html';
+}
