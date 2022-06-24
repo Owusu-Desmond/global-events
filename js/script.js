@@ -2,6 +2,20 @@
 const menuContent = document.querySelector('.mobile-menu');
 const hamburger = document.querySelector('.menu-icon');
 
+// add to storage function
+function addToStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+// remove to storage function
+function getFromStorage(key) {
+  // check if local storage has the value
+  const rawData = localStorage.getItem(key);
+  if (rawData !== null) {
+    return JSON.parse(localStorage.getItem(key));
+  }
+  return [];
+}
+
 hamburger.addEventListener('click', () => {
   document.querySelector('.bi-list').classList.toggle('bi-x');
   menuContent.classList.toggle('menu-show');
@@ -20,10 +34,12 @@ document.getElementById('sign-in-btn3').addEventListener('click', () => {
   signUpModal.style.display = 'none';
   signInModal.style.display = 'block';
 });
-// show login modal five seconds time the moment user visit page
-setTimeout(() => {
-  signInModal.style.display = 'block';
-}, 5000);
+// show login modal five seconds time when user visit page and not login
+if (getFromStorage('Users').length === 0) {
+  setTimeout(() => {
+    signInModal.style.display = 'block';
+  }, 5000);
+}
 // show register modal
 document.getElementById('sign-up-btn').addEventListener('click', () => {
   signInModal.style.display = 'none';
@@ -57,21 +73,7 @@ window.onclick = (event) => {
 */
 const registerForm = document.getElementById('sign-up-form');
 const loginForm = document.getElementById('sign-in-form');
-const errorContainer = document.getElementById('error-message');
 
-// add to storage function
-function addToStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-// remove to storage function
-function getFromStorage(key) {
-  // check if local storage has the value
-  const rawData = localStorage.getItem(key);
-  if (rawData !== null) {
-    return JSON.parse(localStorage.getItem(key));
-  }
-  return [];
-}
 // Register user
 registerForm.addEventListener('submit', (event) => {
   const username = document.getElementById('username').value;
@@ -82,7 +84,7 @@ registerForm.addEventListener('submit', (event) => {
     email,
     password,
   };
-
+  const errorContainer = document.getElementById('error-message2');
   // addToStorage("User" ,data)
   const errors = [];
   const users = getFromStorage('Users');
@@ -118,6 +120,7 @@ registerForm.addEventListener('submit', (event) => {
 // Login user
 loginForm.addEventListener('submit', (event) => {
   const errors = [];
+  const errorContainer = document.getElementById('error-message1');
   const users = getFromStorage('Users');
   if (users.length === 0) {
     errors.push('Email address do not exit, please register');

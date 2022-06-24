@@ -551,6 +551,7 @@ h6 {
 
 iframe {
   height: 300px;
+  width: 100%;
 }
 
 .about-page-main-footer {
@@ -591,6 +592,13 @@ input[type="password"] {
 
 .form-buttom-container {
   background-color: var(--main-bg-color);
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
 }
 
 span.psw {

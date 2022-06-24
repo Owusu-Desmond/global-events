@@ -10,7 +10,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/signIn.css" />
     <title>Global Events</title>
   </head>
   <body>
@@ -26,8 +25,8 @@
             <a href="#"><i class="bi bi-twitter"></i></a>
           </li>
           <li><a href="#">English</a></li>
-          <li><a href="#">My page</a></li>
-          <li><a id="sign-in-btn1" href="#">Sign in</a></li>
+          <li><a id="user-page1" href="#">My page</a></li>
+          <li><a class="sign-in-btn" id="sign-in-btn1" href="#">Sign in</a></li>
         </ul>
       </div>
       <!-- top nav ends here -->
@@ -39,8 +38,8 @@
           <li><a href="about.html">About</a></li>
           <li><a href="#event-categories">Upcoming</a></li>
           <li><a href="#">Live Streaming</a></li>
-          <li><a href="#">My page</a></li>
-          <li><a id="sign-in-btn2" href="#">Sign in</a></li>
+          <li><a id="user-page2" href="#">My page</a></li>
+          <li><a class="sign-in-btn" id="sign-in-btn2" href="#">Sign in</a></li>
         </ul>
       </div>
       <!-- mobile menu pop up ends here-->
@@ -84,7 +83,7 @@
           </div>
           <h2>Login</h2>
           <div class="container">
-            <label for="email"><b>Email Address</b></label>
+            <label for="login-email"><b>Email Address</b></label>
             <input
               type="email"
               id="login-email"
@@ -95,7 +94,7 @@
               required
             />
 
-            <label for="password"><b>Password</b></label>
+            <label for="login-password"><b>Password</b></label>
             <input
               type="password"
               id="login-password"
@@ -105,12 +104,11 @@
               name="password"
               required
             />
-            <label>
-              <div class="remember-me">
-                <input type="checkbox" checked="checked" name="remember" />
-                Remember me
-              </div>
-            </label>
+            <div class="remember-me">
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </div>
+            <div id="error-message1"></div>
             <button class="sign-in-submit-btn form-submit-btn" type="submit">
               Submit
             </button>
@@ -150,7 +148,7 @@
           </div>
           <h2>Register</h2>
           <div class="container">
-            <label for="Username"><b>Username</b></label>
+            <label for="username"><b>Username</b></label>
             <input
               type="text"
               id="username"
@@ -161,7 +159,7 @@
               required
             />
 
-            <label for="email"><b>Email Address</b></label>
+            <label for="register-email"><b>Email Address</b></label>
             <input
               type="email"
               id="register-email"
@@ -172,7 +170,7 @@
               required
             />
 
-            <label for="password"><b>Password</b></label>
+            <label for="register-password"><b>Password</b></label>
             <input
               type="password"
               id="register-password"
@@ -182,12 +180,11 @@
               name="password"
               required
             />
-            <label>
-              <div class="remember-me">
-                <input type="checkbox" checked="checked" name="remember" />
-                Remember me
-              </div>
-            </label>
+            <div class="remember-me">
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </div>
+            <div id="error-message2"></div>
             <button class="sign-up-submit-btn form-submit-btn" type="submit">
               Submit
             </button>
@@ -259,33 +256,31 @@
           <div class="history"><i class="bi bi-clock-history"></i>History</div>
         </div>
       </section>
-      <section>
-        <div class="main-footer-container">
-          <div class="footet-logo-container">
-            <a class="logo" href="#"
-              ><img src="./images/logo.jpg" alt="logo" /><span
-                class="global-text"
-                >Global</span
-              ><span class="events-text">Events</span></a
+      <div class="main-footer-container">
+        <div class="footet-logo-container">
+          <a class="logo" href="#"
+            ><img src="./images/logo.jpg" alt="logo" /><span class="global-text"
+              >Global</span
+            ><span class="events-text">Events</span></a
+          >
+        </div>
+        <div class="copy-right-container">
+          <div>
+            <p>&copy; 2022 Global Events || Some right are reserved.</p>
+          </div>
+          <div class="author-name">
+            Author : <i><b>Desmond Owusu Ansah</b></i>
+          </div>
+          <div class="author-contact">
+            Email :
+            <u
+              ><i><b>desmond0406114009@gmail.com</b></i></u
             >
           </div>
-          <div class="copy-right-container">
-            <div>
-              <p>&copy; 2022 Global Events || Some right are reserved.</p>
-            </div>
-            <div class="author-name">
-              Author : <i><b>Desmond Owusu Ansah</b></i>
-            </div>
-            <div class="author-contact">
-              Email :
-              <u
-                ><i><b>desmond0406114009@gmail.com</b></i></u
-              >
-            </div>
-          </div>
         </div>
-      </section>
+      </div>
     </footer>
     <script src="./js/script.js"></script>
+    <script src="./js/static-data.js"></script>
   </body>
 </html>

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Global Events</title>
   </head>
-  <style></style>
   <body>
     <!-- page header section -->
     <header>
@@ -26,8 +25,8 @@
             <a href="#"><i class="bi bi-twitter"></i></a>
           </li>
           <li><a href="#">English</a></li>
-          <li><a href="#">My page</a></li>
-          <li><a href="#">Sign in</a></li>
+          <li><a id="user-page1" href="#">My page</a></li>
+          <li><a class="sign-in-btn" id="sign-in-btn1" href="#">Sign in</a></li>
         </ul>
       </div>
       <!-- top nav ends here -->
@@ -41,8 +40,8 @@
           <li><a href="#">live</a></li>
           <li><a href="index.html#event-categories">Upcoming</a></li>
           <li><a href="#">Live Streaming</a></li>
-          <li><a href="#">My page</a></li>
-          <li><a href="#">Sign in</a></li>
+          <li><a id="user-page2" href="#">My page</a></li>
+          <li><a class="sign-in-btn" id="sign-in-btn2" href="#">Sign in</a></li>
         </ul>
       </div>
       <!-- mobile menu pop up ends here-->
@@ -87,7 +86,7 @@
           </div>
           <h2>Login</h2>
           <div class="container">
-            <label for="email"><b>Email Address</b></label>
+            <label for="login-email"><b>Email Address</b></label>
             <input
               type="email"
               id="login-email"
@@ -98,7 +97,7 @@
               required
             />
 
-            <label for="password"><b>Password</b></label>
+            <label for="login-password"><b>Password</b></label>
             <input
               type="password"
               id="login-password"
@@ -108,12 +107,11 @@
               name="password"
               required
             />
-            <label>
-              <div class="remember-me">
-                <input type="checkbox" checked="checked" name="remember" />
-                Remember me
-              </div>
-            </label>
+            <div class="remember-me">
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </div>
+            <div id="error-message1"></div>
             <button class="sign-in-submit-btn form-submit-btn" type="submit">
               Submit
             </button>
@@ -153,7 +151,7 @@
           </div>
           <h2>Register</h2>
           <div class="container">
-            <label for="Username"><b>Username</b></label>
+            <label for="username"><b>Username</b></label>
             <input
               type="text"
               id="username"
@@ -164,7 +162,7 @@
               required
             />
 
-            <label for="email"><b>Email Address</b></label>
+            <label for="register-email"><b>Email Address</b></label>
             <input
               type="email"
               id="register-email"
@@ -175,7 +173,7 @@
               required
             />
 
-            <label for="password"><b>Password</b></label>
+            <label for="register-password"><b>Password</b></label>
             <input
               type="password"
               id="register-password"
@@ -185,12 +183,11 @@
               name="password"
               required
             />
-            <label>
-              <div class="remember-me">
-                <input type="checkbox" checked="checked" name="remember" />
-                Remember me
-              </div>
-            </label>
+            <div class="remember-me">
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </div>
+            <div id="error-message2"></div>
             <button class="sign-up-submit-btn form-submit-btn" type="submit">
               Submit
             </button>
@@ -242,30 +239,24 @@
         <div class="recents-events-container">
           <div>
             <iframe
-              width="100%"
               src="https://www.youtube.com/embed/KY_YUwYrQ2U"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           </div>
           <div>
             <iframe
-              width="100%"
               src="https://www.youtube.com/embed/5AYUAja593g"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
           </div>
           <div>
             <iframe
-              width="100%"
               src="https://www.youtube.com/embed/0dqyXZUgx4U"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             ></iframe>
@@ -286,9 +277,9 @@
           <div class="history"><i class="bi bi-whatsapp"></i>Whatsapp</div>
         </div>
       </section>
-      <section class="about-page-main-footer">
+      <div class="about-page-main-footer">
         <div><p>&copy; 2022 Global Events || Some right are reserved.</p></div>
-      </section>
+      </div>
     </footer>
     <script src="./js/script.js"></script>
   </body>
