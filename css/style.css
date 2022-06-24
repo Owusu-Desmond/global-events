@@ -284,32 +284,33 @@ nav {
 
 .event-categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, auto));
   gap: 20px;
 }
 
 .category {
   background-color: #383941;
   cursor: pointer;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 2fr 3fr;
+  align-items: center;
 }
 
 .category-icon {
   color: white;
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 900;
-  text-align: center;
+  padding-left: 10px; 
 }
 
 .category-name {
   color: var(--secondary-color);
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
-  text-align: center;
 }
 
 .category-description {
   color: #fff;
-  text-align: center;
   max-width: 300px;
   margin: 15px auto;
 }
@@ -594,8 +595,7 @@ input[type="password"] {
   background-color: var(--main-bg-color);
 }
 
-.error-message1,
-.error-message2 {
+.error-message {
   color: red;
   text-align: center;
   padding: 10px;
@@ -747,7 +747,25 @@ span.psw {
   .category-events-container {
     grid-template-columns: 1fr 1fr;
   }
-
+  .category {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .category-icon {
+    color: white;
+    font-size: 70px;
+    font-weight: 900;
+    padding-left: 10px; 
+  }
+  
+  .category-name {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  .category-description {
+    max-width: 300px;
+  }
   .host-interested-container {
     grid-template-columns: auto auto;
   }

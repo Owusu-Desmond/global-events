@@ -268,13 +268,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryCtn = document.createElement('div');
     const categoryClass = events.privateClasses.category;
     const categoryContent = `
-                          <p class="category-icon ${categoryClass}">
-                              <i class='${events.privateClasses.categoryIcon} ${categoryClass}'></i>
-                          </p>
-                          <p class="category-name ${categoryClass}">${events.category}</p>
-                          <p class="category-description">
+                          <div>
+                            <p class="category-icon ${categoryClass}">
+                                <i class='${events.privateClasses.categoryIcon} ${categoryClass}'></i>
+                            </p>
+                          </div>
+                          <div>
+                            <p class="category-name ${categoryClass}">${events.category}</p>
+                          </div>
+                          <div>
+                            <p class="category-description">
                               <a class="${categoryClass}" href="#events-category-section">${events.description}</a>
-                          </p>
+                            </p>
+                          </div>
                       `;
 
     categoryCtn.setAttribute('class', 'category');
