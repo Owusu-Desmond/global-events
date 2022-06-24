@@ -25,6 +25,10 @@ Copy All Project files and run using VSCODE. HTML can be viewed in browser.
 Access the the online version of my application with this link
 [Live Demo](https://owusu-desmond.github.io/global-events/)
 
+## Link to Presentation on this Project
+
+[See presentation](https://www.youtube.com/watch?v=ZdOP4faW7zY)
+
 ## Build With
 
 - Editor : Visual studio code
