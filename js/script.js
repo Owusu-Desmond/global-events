@@ -380,6 +380,10 @@ document.getElementById('sign-in-btn3').addEventListener('click', () => {
   signUpModal.style.display = 'none';
   signInModal.style.display = 'block';
 });
+// show login modal five seconds time the moment user visit page
+setTimeout(() => {
+  signInModal.style.display = 'block';
+},5000)
 // show register modal
 document.getElementById('sign-up-btn').addEventListener('click', () => {
   signInModal.style.display = 'none';
@@ -413,6 +417,7 @@ window.onclick = (event) => {
 */
 const registerForm = document.getElementById('sign-up-form');
 const loginForm = document.getElementById('sign-in-form');
+const errorContainer = document.getElementById('error-message');
 
 // add to storage function
 function addToStorage(key, data) {
@@ -437,6 +442,7 @@ registerForm.addEventListener('submit', (event) => {
     email,
     password,
   };
+
   // addToStorage("User" ,data)
   const errors = [];
   const users = getFromStorage('Users');
@@ -461,7 +467,12 @@ registerForm.addEventListener('submit', (event) => {
     addToStorage('Users', users);
   } else {
     event.preventDefault();
-    alert(errors[0]);
+    const [errorMessage] = errors;
+    errorContainer.innerHTML = errorMessage;
+    // hide error message five seconds time
+    setTimeout(() => {
+      errorContainer.innerHTML = '';
+    }, 5000);
   }
 });
 // Login user
@@ -474,7 +485,12 @@ loginForm.addEventListener('submit', (event) => {
   // add user if there is no error
   if (errors.length !== 0) {
     event.preventDefault();
-    alert(errors[0]);
+    const [errorMessage] = errors;
+    errorContainer.innerHTML = errorMessage;
+    // hide error message five seconds time
+    setTimeout(() => {
+      errorContainer.innerHTML = '';
+    }, 5000);
   }
 });
 // get user from local storage when page loads
@@ -482,7 +498,8 @@ const User = getFromStorage('Users');
 const signInText1 = document.getElementById('sign-in-btn1');
 const signInText2 = document.getElementById('sign-in-btn2');
 if (User.length > 0) {
-  document.getElementById('user-page').innerHTML = `<i class="bi bi-person-circle"></i>${User[0].username}`;
+  document.getElementById('user-page1').innerHTML = `<i class="bi bi-person-circle"></i>${User[0].username}`;
+  document.getElementById('user-page2').innerHTML = `<i class="bi bi-person-circle"></i>${User[0].username}`;
   signInText1.innerHTML = 'Logout<i class="bi bi-arrow-left-square"></i>';
   signInText2.innerHTML = 'Logout<i class="bi bi-arrow-left-square"></i>';
   signInText1.id = '';
