@@ -594,7 +594,8 @@ input[type="password"] {
   background-color: var(--main-bg-color);
 }
 
-.error-message {
+.error-message1,
+.error-message2 {
   color: red;
   text-align: center;
   padding: 10px;
